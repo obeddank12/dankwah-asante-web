@@ -32,7 +32,7 @@ if (themeBtn) {
 }
 
 /** * 2. DYNAMIC GREETING
- * Updates based on Ghana local time
+ * Updates based on local time
  */
 const hour = new Date().getHours();
 const greetingElement = document.getElementById("greeting");
@@ -43,16 +43,6 @@ if (greetingElement) {
     else if (hour < 18) greetingText = "Good Afternoon";
     else greetingText = "Good Evening";
 
-    greetingElement.innerHTML = `${greetingText}, I'm Obed Asante`;
-}
-
-/** * 3. VISITOR COUNTER
- * Tracks unique browser sessions
- */
-const counterElement = document.getElementById("visitor-count");
-if (counterElement) {
-    let visits = localStorage.getItem('page_view');
-    visits = visits ? Number(visits) + 1 : 1;
-    localStorage.setItem('page_view', visits);
-    counterElement.innerHTML = `Page Visits: ${visits}`;
+    // Restored your name exactly as requested
+    greetingElement.innerHTML = `${greetingText}, I'm Dankwah Obed Asante`;
 }
