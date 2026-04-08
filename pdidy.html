@@ -12,7 +12,14 @@
         .info-card { background: #e8f4fd; border-left: 5px solid #3498db; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
         button { background: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
         button:hover { background: #2980b9; }
-        .note { font-size: 0.9em; color: #666; font-style: italic; }
+        
+        /* Quiz Styles */
+        details { background: #fdfdfd; border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin-bottom: 15px; }
+        summary { font-weight: bold; cursor: pointer; color: #2980b9; font-size: 1.1em; outline: none; padding: 5px; }
+        .qa { margin: 10px 0; padding-bottom: 10px; border-bottom: 1px dashed #eee; }
+        .qa:last-child { border-bottom: none; }
+        .q { font-weight: bold; color: #333; display: block; margin-bottom: 4px; }
+        .a { color: #d35400; font-weight: bold; } 
 
         /* Login Overlay */
         #login-overlay {
@@ -52,23 +59,108 @@
         <button onclick="copyText('passNote')" style="font-size:0.7em; padding:5px;">Copy Pass</button>
     </div>
 
-    <h2>Nursing Quick Ref</h2>
-    <ul>
-        <li><strong>IV Drop Rate:</strong> (Total Vol / Time in min) &times; Drop Factor</li>
-        <li><strong>Dosage:</strong> (Desired / Have) &times; Quantity</li>
-    </ul>
+    <h2>Course Material Q&A</h2>
+    
+    <details>
+        <summary>QUIZ 1: Healthcare Delivery Questions and Answers</summary>
+        <div class="qa"><span class="q">1. Where is the maternity ward?</span><span class="a">a) La maternité est au premier étage.</span></div>
+        <div class="qa"><span class="q">2. Do you have an appointment?</span><span class="a">b) Oui, j'ai un rendez-vous à 10 heures.</span></div>
+        <div class="qa"><span class="q">3. What is your name?</span><span class="a">c) Mon nom est Marie Dupont.</span></div>
+        <div class="qa"><span class="q">4. What is your date of birth?</span><span class="a">d) Je suis né(e) le 12 mars 1990.</span></div>
+        <div class="qa"><span class="q">5. Are you experiencing any pain?</span><span class="a">b) Non, je ne ressens aucune douleur.</span></div>
+        <div class="qa"><span class="q">6. Are you feeling contractions?</span><span class="a">a) Non, je ne ressens rien.</span></div>
+        <div class="qa"><span class="q">7. When did the contractions start?</span><span class="a">c) Il y a deux heures.</span></div>
+        <div class="qa"><span class="q">8. How far apart are your contractions?</span><span class="a">a) Je n'ai pas de contractions.</span></div>
+        <div class="qa"><span class="q">9. Do you feel the baby moving?</span><span class="a">b) Non, je ne sens rien.</span></div>
+        <div class="qa"><span class="q">10. Do you want an epidural?</span><span class="a">a) Non, je préfère accoucher naturellement.</span></div>
+        <div class="qa"><span class="q">11. Where is the maternity ward?</span><span class="a">C) À l'étage</span></div>
+        <div class="qa"><span class="q">12. Do you have an appointment?</span><span class="a">D) Oui, à 14h</span></div>
+        <div class="qa"><span class="q">13. What is your name?</span><span class="a">C. Paul Martin</span></div>
+        <div class="qa"><span class="q">14. What is your date of birth?</span><span class="a">D. 8 septembre 1975</span></div>
+        <div class="qa"><span class="q">15. Are you feeling any pain?</span><span class="a">B. Non, pas du tout.</span></div>
+        <div class="qa"><span class="q">16. Do you have any medical history?</span><span class="a">B. Non, en bonne santé</span></div>
+        <div class="qa"><span class="q">17. Are you currently taking any medication?</span><span class="a">B. Non, aucun</span></div>
+        <div class="qa"><span class="q">18. Since when do you feel these symptoms?</span><span class="a">[No answer recorded]</span></div>
+        <div class="qa"><span class="q">19. Do you have any allergies?</span><span class="a">B. Non, aucune</span></div>
+        <div class="qa"><span class="q">20. Have you been hospitalized recently?</span><span class="a">B. Non, jamais</span></div>
+    </details>
 
-    <h2>Shortcuts</h2>
-    <ul>
-        <li><strong>F9:</strong> Edge Immersive Reader</li>
-        <li><strong>Ctrl + P:</strong> Print Preview (Bypasses selection blocks)</li>
-    </ul>
+    <details>
+        <summary>QUIZ NO. 2</summary>
+        <div class="qa"><span class="q">1. Do you have a fever?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">2. Can you walk without assistance?</span><span class="a">A. Oui</span></div>
+        <div class="qa"><span class="q">3. Do you have breathing problems?</span><span class="a">B. Non, jamais</span></div>
+        <div class="qa"><span class="q">4. Have you ever had surgery?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">5. Do you have a family doctor?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">6. Do you have chest pain?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">7. Are you pregnant?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">8. Do you have health insurance?</span><span class="a">A. Oui</span></div>
+        <div class="qa"><span class="q">9. Do you need a translator?</span><span class="a">B. Non</span></div>
+        <div class="qa"><span class="q">10. When was your last meal?</span><span class="a">A. Ce matin</span></div>
+        <div class="qa"><span class="q">11. Can you describe your pain?</span><span class="a">C. Persistante</span></div>
+        <div class="qa"><span class="q">12. Do you have high blood pressure?</span><span class="a">D. Non</span></div>
+        <div class="qa"><span class="q">13. How much do you weigh?</span><span class="a">[No answer recorded]</span></div>
+    </details>
+
+    <details>
+        <summary>QUIZ No 3: Healthcare Quiz in English and French</summary>
+        <div class="qa"><span class="q">1. What is the French term for 'hospital'?</span><span class="a">b) Hopital</span></div>
+        <div class="qa"><span class="q">2. What do you call a 'nurse' in French?</span><span class="a">c) Infirmier/Infirmière</span></div>
+        <div class="qa"><span class="q">3. How do you say 'emergency room' in French?</span><span class="a">c) Salle d'urgence</span></div>
+        <div class="qa"><span class="q">4. What is the translation of 'prescription' in French?</span><span class="a">b) Ordonnance</span></div>
+        <div class="qa"><span class="q">5. In French, how do you say 'painkiller'?</span><span class="a">b) Antidouleur</span></div>
+        <div class="qa"><span class="q">6. What is 'blood pressure' in French?</span><span class="a">a) Tension artérielle</span></div>
+        <div class="qa"><span class="q">7. How do you say 'X-ray' in French?</span><span class="a">a) Radiographie</span></div>
+        <div class="qa"><span class="q">8. What is the term for 'surgery' in French?</span><span class="a">b) Operation</span></div>
+        <div class="qa"><span class="q">9. In French, what is 'to take medicine'?</span><span class="a">b) Prendre un medicament</span></div>
+        <div class="qa"><span class="q">10. How do you say 'ambulance' in French?</span><span class="a">c) Ambulance</span></div>
+        <div class="qa"><span class="q">11. What is a 'general practitioner' in French?</span><span class="a">b) Medecin generaliste</span></div>
+        <div class="qa"><span class="q">12. How do you say 'patient file' in French?</span><span class="a">a) Dossier medical</span></div>
+        <div class="qa"><span class="q">13. What does 'pharmacist' translate to in French?</span><span class="a">c) Pharmacien</span></div>
+        <div class="qa"><span class="q">14. What is 'first aid' in French?</span><span class="a">b) Premiers secours</span></div>
+        <div class="qa"><span class="q">15. How do you say 'medical test' in French?</span><span class="a">a) Test medical</span></div>
+        <div class="qa"><span class="q">16. What is 'health insurance' in French?</span><span class="a">a) Assurance maladie</span></div>
+        <div class="qa"><span class="q">17. How do you say 'stethoscope' in French?</span><span class="a">c) Stethoscope</span></div>
+        <div class="qa"><span class="q">18. What does 'vaccine' translate to in French?</span><span class="a">b) Vaccin</span></div>
+        <div class="qa"><span class="q">19. How do you say 'flu' in French?</span><span class="a">b) Grippe</span></div>
+        <div class="qa"><span class="q">20. What is the translation of 'infection' in French?</span><span class="a">b) Infection</span></div>
+    </details>
+
+    <details>
+        <summary>Midsem</summary>
+        <div class="qa"><span class="q">1. Combien de personne il y a dans la famille de Van Vicker ?</span><span class="a">Cinq</span></div>
+        <div class="qa"><span class="q">2. Quel est le nom de la femme de Van Vicker ?</span><span class="a">Adjoa Vicker</span></div>
+        <div class="qa"><span class="q">3. Combien d'enfants ont Van Vicker et sa femme ?</span><span class="a">Trois enfants</span></div>
+        <div class="qa"><span class="q">4. Quel type de films Van Vicker est - il connu pour ?</span><span class="a">ghanéen et nigériens</span></div>
+        <div class="qa"><span class="q">5. Que fait Van Vicker quand il ne travaille pas ?</span><span class="a">Il passe du temps avec sa famille</span></div>
+        <div class="qa"><span class="q">6. Van Vicker est un .............................</span><span class="a">acteur ghanéen</span></div>
+        <div class="qa"><span class="q">7. La famille de Van Vicker est une famille ........................</span><span class="a">Nucléaire</span></div>
+        <div class="qa"><span class="q">8. La famille de Van Vicker est combien ?</span><span class="a">Cinq</span></div>
+        <div class="qa"><span class="q">9. ............................. est un acteur ghanéen renommé.</span><span class="a">Van Vicker</span></div>
+        <div class="qa"><span class="q">10. Van Vicker préfère travailler plutôt que passer du temps avec ...........</span><span class="a">Sa famille</span></div>
+        <div class="qa"><span class="q">11. Je soigne les malades. Je suis ....................</span><span class="a">Médecin</span></div>
+        <div class="qa"><span class="q">12. Monsieur Nii Mantey fait des habits. Il est ......................</span><span class="a">Couturier</span></div>
+        <div class="qa"><span class="q">13. Madame Abigail juge les criminels. Elle est...............</span><span class="a">Juge</span></div>
+        <div class="qa"><span class="q">14. J'écris des lettres et prends des messages. Je suis ....................</span><span class="a">Secrétaire</span></div>
+        <div class="qa"><span class="q">15. Monsieur Abou fabrique des meubles. Il est..........................</span><span class="a">Menuisier</span></div>
+        <div class="qa"><span class="q">16. Le fils de mon frère est mon ....................</span><span class="a">Neveu</span></div>
+        <div class="qa"><span class="q">17. Monsieur Baba est mon ........................, c'est le frère de ma mère.</span><span class="a">Oncle</span></div>
+        <div class="qa"><span class="q">18. La fille de mon père est ma .....................</span><span class="a">Sœur</span></div>
+        <div class="qa"><span class="q">19. La mère de ma mère est ma .....................</span><span class="a">Grand-mère</span></div>
+        <div class="qa"><span class="q">20. Kofi est le fils de ma tante. Il est mon .................</span><span class="a">Cousin</span></div>
+        <div class="qa"><span class="q">21. Les filles sont contentes.</span><span class="a">Elles</span></div>
+        <div class="qa"><span class="q">22. Abena et moi allons a l'école.</span><span class="a">Nous</span></div>
+        <div class="qa"><span class="q">23. Mon père est mécanicien.</span><span class="a">Il</span></div>
+        <div class="qa"><span class="q">24. Quel est le premier mois de l'année ?</span><span class="a">Janvier</span></div>
+        <div class="qa"><span class="q">25. Le ................. est le jour qui vient juste après le vendredi.</span><span class="a">Samedi</span></div>
+    </details>
+
 </div>
 
 <script>
     // ACCESS CREDENTIALS
-    const VAULT_USER = "obeddank12";
-    const VAULT_PASS = "Jack12@com";
+    const VAULT_USER = "EXAMS";
+    const VAULT_PASS = "EXAMS";
 
     function checkLogin() {
         const u = document.getElementById('username').value;
