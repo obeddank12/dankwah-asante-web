@@ -10,8 +10,11 @@
         h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-top: 30px; }
         .code-box { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; position: relative; margin-bottom: 20px; }
         .info-card { background: #e8f4fd; border-left: 5px solid #3498db; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
-        button { background: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+        .folder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        button { background: #3498db; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
         button:hover { background: #2980b9; }
+        .btn-folder { background: #ecf0f1; color: #2c3e50; border: 1px solid #bdc3c7; text-align: left; font-size: 0.9em; }
+        .btn-folder:hover { background: #dcdde1; }
 
         /* Login Overlay */
         #login-overlay {
@@ -51,28 +54,42 @@
         <button onclick="copyText('passNote')" style="font-size:0.7em; padding:5px;">Copy Pass</button>
     </div>
 
-    <h2>Greeting Study Assets</h2>
+    <h2>Study Asset Categories</h2>
     <div class="info-card">
-        <p>Manage your images and downloads for the Greetings folder:</p>
-        <button onclick="window.open('https://github.com/obeddank12/dankwah-asante-web/tree/main/images/Greetings', '_blank')">
-            📂 Open Greetings Folder
-        </button>
-        <button style="background: #27ae60;" onclick="window.open('https://github.com/obeddank12/dankwah-asante-web/archive/refs/heads/main.zip')">
-            📥 Download Repository ZIP
+        <p>Select a category to view/upload images in GitHub:</p>
+        <div class="folder-grid">
+            <button class="btn-folder" onclick="openDir('Greetings')">👋 Greetings</button>
+            <button class="btn-folder" onclick="openDir('Family')">👨‍👩‍👧 Family</button>
+            <button class="btn-folder" onclick="openDir('Food')">🍎 Food</button>
+            <button class="btn-folder" onclick="openDir('Emotions_and_Ideas')">💡 Emotions & Ideas</button>
+            <button class="btn-folder" onclick="openDir('Pronouns_and_People')">👥 Pronouns & People</button>
+            <button class="btn-folder" onclick="openDir('Action_and_related_Words')">🏃 Actions</button>
+            <button class="btn-folder" onclick="openDir('Opposite_and_questions')">❓ Opposites/Qs</button>
+            <button class="btn-folder" onclick="openDir('Education_Career_and_Communication')">🎓 Career/Edu</button>
+            <button class="btn-folder" onclick="openDir('Health_Medical_and_body')">🏥 Health/Body</button>
+            <button class="btn-folder" onclick="openDir('Money_and_Quantity')">💰 Money/Qty</button>
+            <button class="btn-folder" onclick="openDir('Time_Season_and_weather')">☀️ Time/Weather</button>
+        </div>
+        <br>
+        <button style="background: #27ae60; width: 100%;" onclick="window.open('https://github.com/obeddank12/dankwah-asante-web/archive/refs/heads/main.zip')">
+            📥 Download All Assets (.zip)
         </button>
     </div>
 
 </div>
 
 <script>
-    // ACCESS CREDENTIALS
     const VAULT_USER = "EXAMS";
     const VAULT_PASS = "EXAMS";
+    const BASE_URL = "https://github.com/obeddank12/dankwah-asante-web/tree/main/images/";
+
+    function openDir(folder) {
+        window.open(BASE_URL + folder, '_blank');
+    }
 
     function checkLogin() {
         const u = document.getElementById('username').value;
         const p = document.getElementById('password').value;
-        
         if (u === VAULT_USER && p === VAULT_PASS) {
             document.getElementById('login-overlay').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
@@ -81,7 +98,6 @@
         }
     }
 
-    // Handle "Enter" key
     document.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkLogin(); });
 
     function copyToClipboard(elementId) {
